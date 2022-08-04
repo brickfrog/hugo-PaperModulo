@@ -1,13 +1,13 @@
 <h1 align=center>Hugo PaperModulo </h1> 
 
-A fork of a [fork](https://github.com/reorx/hugo-PaperModX) of a ["fork"](https://github.com/adityatelange/hugo-PaperMod) of [PaperMod](https://github.com/nanxiaobei/hugo-paper). What other Mod themed names remain?
+A fork of a [fork](https://github.com/reorx/hugo-PaperModX) of a ["fork"](https://github.com/adityatelange/hugo-PaperMod) of [Paper](https://github.com/nanxiaobei/hugo-paper). What other Mod themed names remain?
 
 <br>
 
 
 But in all seriousness, thanks [reorx](https://www.github.com/reorx/) and [adityatelange](https://github.com/adityatelange/) for your themes. This is primarily a personal tweak to get used to editing hugo for my own site. See: https://justin.vc for an example of this theme. 
 
-If you're not a fan of my aesthetics, I'd recommend sticking with PaperMod and integrating any changes using the layouts / feel free to copy how I added Utterances, for example.
+If you're not a fan of my aesthetics, I'd recommend sticking with [PaperMod](https://github.com/adityatelange/hugo-PaperMod) and integrating any changes using the layouts / feel free to copy how I added Utterances, for example.
 
 <br>
 
