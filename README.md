@@ -12,7 +12,6 @@ If you're not a fan of my aesthetics, I'd recommend sticking with PaperMod and i
 <br>
 
 ## Install
----
 
 Inside the folder of your Hugo project, run:
 ```
