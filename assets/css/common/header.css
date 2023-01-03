@@ -8,6 +8,7 @@
     line-height: var(--header-height);
     border-bottom: 0.5px solid var(--link-hover-color);
 }
+
 .nav ul {
     margin: 0;
     padding: 0;
@@ -55,12 +56,12 @@ button#theme-toggle {
     margin: auto 4px;
 }
 
-body.dark #moon {
+body.dark #sun {
     vertical-align: middle;
     display: none;
 }
 
-body:not(.dark) #sun {
+body:not(.dark) #moon {
     display: none;
 }
 
@@ -71,7 +72,7 @@ body:not(.dark) #sun {
     white-space: nowrap;
 }
 
-#menu li + li {
+#menu li+li {
     margin-inline-start: var(--gap);
 }
 
@@ -82,6 +83,7 @@ body:not(.dark) #sun {
     display: inline-block;
     line-height: 1.5em;
 }
+
 #menu a:hover {
     color: var(--primary);
 }
@@ -94,6 +96,7 @@ body:not(.dark) #sun {
 #menu .external-link {
     position: relative;
 }
+
 #menu .external-link svg {
     width: 13px;
     height: auto;
