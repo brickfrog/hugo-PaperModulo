@@ -19,9 +19,10 @@
     </div>
     {{- end }}
 </header>
-<p>This is a search bar written with <a href="https://fusejs.io">fuse.js</a>. Requires javascript.</p><br>
+<p>This is a search bar written with <a href="https://fusejs.io">fuse.js</a>. Requires javascript.
+    You can use arrow keys to navigate the resulting list and escape to, well, escape.</p><br>
 <div id="searchbox">
-    <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
+    <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf " %s ↵" .Title) }}"
         aria-label="search" type="search" autocomplete="off">
     <ul id="searchResults" aria-label="search results"></ul>
 </div>

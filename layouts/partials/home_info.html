@@ -2,12 +2,17 @@
 <article class="first-entry home-info">
   <header class="entry-header">
     <h1>{{ .Title | markdownify }}</h1>
+    <h6>{{ .Subtitle | markdownify }}</h6>
   </header>
   <section class="entry-content">
     {{- trim .Content "\n" | markdownify -}}
+    {{- if (.OmgName) }}
+    <script src="https://status.lol/{{- .OmgName -}}.js?time&link&fluent"></script>
+    {{- end }}
   </section>
   <footer class="entry-footer">
-    {{- partial "social_icons.html" (dict "icons" site.Params.socialIcons "svg" $.Site.Data.svg "MaskedEmail" site.Params.MaskedEmail "Email" site.Params.Email) -}}
+    {{- partial "social_icons.html" (dict "icons" site.Params.socialIcons "svg" $.Site.Data.svg "MaskedEmail"
+    site.Params.MaskedEmail "Email" site.Params.Email) -}}
   </footer>
 </article>
 {{- end -}}
