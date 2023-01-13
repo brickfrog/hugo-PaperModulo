@@ -1,0 +1,21 @@
+.container {
+    background-color: var(--tertiary-bg);
+    margin-top: 15px;
+}
+
+.micro-link,
+.micro-content {
+    font-size: 14px;
+    margin: 0;
+    padding-left: 10px;
+    display: table-cell;
+}
+
+.micro-link {
+    font-weight: 700;
+    min-width: 90px;
+}
+
+.micro-content {
+    color: var(--secondary);
+}

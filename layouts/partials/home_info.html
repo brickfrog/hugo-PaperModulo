@@ -6,8 +6,8 @@
   </header>
   <section class="entry-content">
     {{- trim .Content "\n" | markdownify -}}
-    {{- if (.OmgName) }}
-    <script src="https://status.lol/{{- .OmgName -}}.js?time&link&fluent"></script>
+    {{- if ( .Omg.Name ) }}
+    <script src="https://status.lol/{{- .Omg.Name -}}.js?time&link&fluent"></script>
     {{- end }}
   </section>
   <footer class="entry-footer">
@@ -15,4 +15,9 @@
     site.Params.MaskedEmail "Email" site.Params.Email) -}}
   </footer>
 </article>
+{{- end -}}
+
+{{- if site.Params.homeInfoParams.MicroBlog.Url }}
+{{- partial "micro_feed.html" -}}
+<br>
 {{- end -}}

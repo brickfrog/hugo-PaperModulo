@@ -28,20 +28,24 @@
 {{- $pages := .Pages }}
 
 {{- if .IsHome }}
-  {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- end }}
 
 {{/* related issue: https://github.com/gohugoio/hugo/issues/9003 */}}
 {{ $paginator := "" }}
 {{ if (.Param "paginate") }}
-  {{- $paginator = .Paginate $pages (.Param "paginate") }}
+{{- $paginator = .Paginate $pages (.Param "paginate") }}
 {{ else }}
-  {{- $paginator = .Paginate $pages }}
+{{- $paginator = .Paginate $pages }}
 {{ end }}
 
 {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
 {{- partial "home_info.html" . }}
 {{- end }}
+
+{{- if site.Params.homeInfoParams.MicroBlog }}
+<hr class="dashed"><br>
+{{ end }}
 
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
@@ -68,9 +72,9 @@
   {{- if (ne (.Param "hideSummary") true) }}
   <section class="entry-content">
     {{ if .Description }}
-      <p>{{ .Description | plainify | htmlUnescape }}</p>
+    <p>{{ .Description | plainify | htmlUnescape }}</p>
     {{ else }}
-      <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
     {{ end }}
   </section>
   {{- end }}
