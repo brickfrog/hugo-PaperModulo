@@ -30,8 +30,8 @@ There's a couple things I planned to remove / change around when I have more fre
 * Utterances for commenting, using the standard PaperMod/X config
 * Sidenotes shortcode (thanks for idea/initial code: https://danilafe.com/blog/sidenotes )
 * https://omg.lol status integration on homepage
+* https://micro.blog mini-feed on homepage
 
 TODO:
 
 * Alternative to InstantClick (outdated?)
-* micro.blog integration?
