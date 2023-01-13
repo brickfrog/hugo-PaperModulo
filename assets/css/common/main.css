@@ -250,12 +250,15 @@ figure>img {
 div.statuslol {
     background: var(--tertiary-bg) !important;
     display: flex;
-    flex-wrap: wrap;
     gap: 1em;
     color: #111;
     border-radius: 0.5em;
     padding: 1em;
     margin-top: 1em;
+}
+
+div.statuslol:hover {
+    transform: scale(1.02);
 }
 
 .statuslol p {
