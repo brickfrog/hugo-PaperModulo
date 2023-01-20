@@ -14,12 +14,8 @@
 
 <script>
     function stripTags(str) {
-        // ugly, but works - makes display nicer
-        return str.replace(/(<([^>]+)>)/ig, "")
-            .replace('&rsquo;', '\'')
-            .replace('&ldquo;', '\"')
-            .replace('&rdquo;', '\"')
-            .trim();
+        // Remove HTML tags and trim the result, a bit ugly but works
+        return str.replace(/<[^>]+>|&rsquo;|&ldquo;|&rdquo;|&rsquo;|&rsquo;/ig, "").trim();
     }
 
     function getData() {
