@@ -26,12 +26,14 @@ Primarily the same as PaperMod / PaperModX. See my [personal config](https://git
 
 There's a couple things I planned to remove / change around when I have more free time. Right now, things are mostly cosmetic, however I have added:
 
-* Getting dark theme closer to Dracula / Chroma edits
-* Utterances for commenting, using the standard PaperMod/X config
-* Sidenotes shortcode (thanks for idea/initial code: https://danilafe.com/blog/sidenotes )
-* https://omg.lol status integration on homepage
-* https://micro.blog mini-feed on homepage
+- [x] Getting dark theme closer to Dracula / Chroma edits
+- [x] Utterances for commenting, using the standard PaperMod/X config
+- [x] Sidenotes shortcode (thanks for idea/initial code: https://danilafe.com/blog/sidenotes )
+- [x] https://omg.lol status integration on homepage
+- [x] https://micro.blog mini-feed on homepage
+- [x] filter for icon to change color between dark/light mode
 
 TODO:
 
-* Alternative to InstantClick (outdated?)
+- [ ] Alternative to InstantClick (outdated?)
+- [ ] [giscus](https://github.com/giscus/giscus) support (kinda like utterances, but for github discussions - still in "beta", so keep utterances as option)

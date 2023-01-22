@@ -59,7 +59,7 @@ function toggleThemeListener() {
 <script>
   // load theme, as early as possible
   (function() {
-    const defaultTheme = '{{ site.Params.defaultTheme | default "light" }}';
+    const defaultTheme = '{{ site.Params.defaultTheme | default "dark" }}';
     const prefTheme = getPrefTheme();
     const theme = prefTheme ? prefTheme : defaultTheme;
 

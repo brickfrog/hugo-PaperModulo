@@ -6,7 +6,7 @@
   </header>
   <section class="entry-content">
     {{- trim .Content "\n" | markdownify -}}
-    {{- if ( .Omg.Name ) }}
+    {{- if ( .Omg.Enabled ) | default false }}
     <script src="https://status.lol/{{- .Omg.Name -}}.js?time&link&fluent"></script>
     {{- end }}
   </section>

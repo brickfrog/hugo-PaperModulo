@@ -45,6 +45,8 @@
     border-radius: 6px;
     margin-inline-end: 8px;
     image-rendering: -webkit-optimize-contrast;
+    filter: var(--icon-filter);
+    width: 42px;
 }
 
 #theme-toggle svg {
