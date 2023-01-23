@@ -27,7 +27,12 @@ mark {
     box-decoration-break: clone;
 }
 
+.entry-header {
+    margin-bottom: 1.5em;
+}
+
 .entry-header h6 {
+    margin-top: 0.25em;
     margin-left: 1.5em;
 }
 
