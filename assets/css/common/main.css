@@ -5,8 +5,8 @@
     max-width: calc(var(--main-width) + var(--gap) * 2);
     margin: auto;
     padding: var(--gap);
-    padding-bottom: 0;
     background-color: var(--entry);
+    opacity: 99%;
 }
 
 .mark-line {
@@ -28,7 +28,7 @@ mark {
 }
 
 .entry-header {
-    margin-bottom: 1.5em;
+    margin-bottom: 0.6em;
 }
 
 .entry-header h6 {
@@ -64,6 +64,7 @@ mark {
 
 .social-icons {
     padding: 12px 0;
+    margin-top: 12px;
 }
 
 .social-icons a {
@@ -248,37 +249,4 @@ figure>img {
 .image-size-control>img {
     width: inherit;
     height: inherit;
-}
-
-/* status.omg embed - overwriting the defaults provided */
-
-div.statuslol {
-    background: var(--tertiary-bg) !important;
-    display: flex;
-    gap: 1em;
-    color: #111;
-    border-radius: 0.5em;
-    padding: 1em;
-    margin-top: 1em;
-}
-
-div.statuslol:hover {
-    transform: scale(1.02);
-}
-
-.statuslol p {
-    color: var(--primary);
-}
-
-.statuslol_time a {
-    color: var(--primary) !important;
-    opacity: .75 !important;
-    font-size: 13px;
-}
-
-img.statuslol_emoji {
-    max-width: 100em;
-    flex: 0 0 1em;
-    font-size: 3em;
-    padding-right: 0;
 }

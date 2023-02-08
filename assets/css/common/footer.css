@@ -5,12 +5,12 @@
 }
 
 .footer {
-    max-width: calc(var(--main-width) + var(--gap) * 2);
     margin: auto;
     padding: calc((var(--footer-height) - var(--gap)) / 2) var(--gap);
     text-align: center;
     line-height: 24px;
     border-top: 0.5px solid var(--link-hover-color);
+    background-color: var(--theme);
 }
 
 .footer span {
@@ -49,7 +49,7 @@
     padding: 12px;
     border-radius: 64px;
     transition: visibility 0.5s, opacity 0.8s linear;
-    line-height: 1.5;
+    line-height: 1.4em;
 }
 
 .top-link,
@@ -72,6 +72,7 @@
 .medium-zoom-overlay {
     z-index: 2;
 }
+
 .medium-zoom-image--opened {
     z-index: 3;
 }

@@ -1,0 +1,140 @@
+{{- with site.Params.homeInfoParams }}
+
+
+
+<div class="statuslol_container">
+    <script src="https://status.lol/{{- .Omg.Name -}}.js?time&link&fluent"></script>
+</div>
+
+
+<style>
+
+    .statuslol_container {
+        margin-bottom: 2em;
+        margin-top: 2em;
+    }
+
+    div.statuslol:hover {
+        transform: scale(1.02);
+    }
+
+    img.statuslol_emoji {
+        flex: 0 0 1em;
+        margin-top: 0.50em;
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+        width: 10%;
+        height: 30%;
+    }
+
+    .statuslol p {
+        font-family: "Apple Kid", sans-serif;
+        font-size: 1.5em;
+        margin: 3px;
+        line-height: 1.10em;
+        letter-spacing: 0.025em;
+    }
+
+    {{ if eq .Omg.StatusFlavor "plain" }}
+    .statuslol a,
+    .statuslol p {
+        color: #f7f7f7;
+    }
+    {{ else if not (eq .Omg.StatusFlavor "plain") }}
+    .statuslol a,
+    .statuslol p {
+        color: #f7f7bd;
+    }
+    {{ end }}
+    
+
+    .statuslol p::before {
+        content: "⯁ ";
+        margin-right: 0.2em;
+        font-size: 0.5em;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1.8em;
+        /* same as font-size of the p element */
+    }
+
+    .statuslol a::before {
+        content: "- ";
+        /* same as font-size of the p element */
+    }
+
+    .statuslol_time a {
+        font-family: "Apple Kid", sans-serif;
+        font-size: 1.2em;
+        letter-spacing: 0.025em;
+        margin-left: 1em;
+    }
+
+    .statuslol {
+        display: flex;
+        position: relative;
+        margin: 10px;
+        background-color: #2A0727;
+        width: 75%;
+        min-height: 150px;
+        border: 33px solid;
+        border-radius: 45px;
+        padding: 1px;
+        box-sizing: border-box;
+        border-image: url(/images/{{ .Omg.StatusFlavor }}-border.png) 33 round;
+    }
+
+    select {
+        appearance: none;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--primary);
+        background-color: var(--tertiary-bg);
+        font-size: 16px;
+        font-family: sans-serif;
+        margin-right: -100px;
+        z-index: 1;
+    }
+
+    select:hover {
+        border-color: #999;
+        cursor: pointer;
+    }
+</style>
+
+<!-- Non-Earthbound Themed Status
+    
+div.statuslol {
+    background: var(--tertiary-bg) !important;
+    display: flex;
+    gap: 1em;
+    color: #111;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+div.statuslol:hover {
+    transform: scale(1.02);
+}
+
+.statuslol p {
+    color: var(--primary);
+}
+
+.statuslol_time a {
+    color: var(--primary) !important;
+    opacity: .75 !important;
+    font-size: 13px;
+}
+
+img.statuslol_emoji {
+    max-width: 100em;
+    flex: 0 0 1em;
+    font-size: 3em;
+    padding-right: 0;
+}
+-->
+
+{{- end -}}

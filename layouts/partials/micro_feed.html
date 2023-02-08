@@ -2,24 +2,24 @@
     <meta name="microBlogUrl" content="{{ site.Params.homeInfoParams.MicroBlog.Url }}">
 </head>
 
-<header class="entry-header">
-    {{- with site.Params.homeInfoParams.MicroBlog -}}
-    <h3>{{ .Title }}</h4>
-        <h6>{{ .Subtitle }}</h6>
-        {{- end -}}
-</header>
 <div id="microBlog">
+    <header class="entry-header">
+        {{- with site.Params.homeInfoParams.MicroBlog -}}
+        <h3><a href={{ .Url }}>{{ .Title }}</a></h4>
+            <h6>{{ .Subtitle }}</h6>
+            {{- end -}}
+    </header>
     <!-- Placeholder for the list of items -->
 </div>
 
 <script>
     function stripTags(str) {
         // Remove HTML tags and trim the result, a bit ugly but works
-        return str.replace(/<[^>]+>|&rsquo;|&ldquo;|&rdquo;|&rsquo;|&rsquo;/ig, "").trim();
+        return str.replace(/<[^>]+>|&rsquo;|&hellip;|&ldquo;|&rdquo;|&rsquo;|&rsquo;/ig, "").trim();
     }
 
     function getData() {
-        var microBlogUrl = document.querySelector("meta[name='microBlogUrl']").getAttribute("content");
+        var microBlogUrl = document.querySelector("meta[name='microBlogUrl']").getAttribute("content") + "/feed.json";
         fetch(microBlogUrl)
             .then(response => {
                 if (!response.ok) {

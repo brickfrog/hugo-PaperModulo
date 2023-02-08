@@ -26,7 +26,7 @@
     margin: 14px 0;
     font-size: 17px;
     color: var(--primary);
-    line-height: 1.5em;
+    line-height: 1.4em;
     display: block;
     overflow: initial;
     /* fix <mark> edge get cut */
@@ -56,14 +56,19 @@
     border-radius: var(--radius);
 }
 
+.post-entry:hover {
+    transform: scale(1.02) translate3d(0, 0, 0);
+    box-shadow: 1px 16px 29px -5px rgba(0, 0, 0, 0.75);
+}
+
 .post-entry:hover .entry-header h2 {
     color: var(--link-hover-color);
     box-shadow: var(--link-hover-underline-shadow);
 }
 
-/* .post-entry:active {
+.post-entry:active {
     transform: scale(0.97);
-} */
+}
 
 .tag-entry .entry-cover {
     display: none;
@@ -80,7 +85,7 @@
     margin: 8px 0;
     color: var(--secondary);
     font-size: 14px;
-    line-height: 1.5em;
+    line-height: 1.4em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;

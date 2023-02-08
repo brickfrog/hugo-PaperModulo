@@ -6,14 +6,16 @@
   </header>
   <section class="entry-content">
     {{- trim .Content "\n" | markdownify -}}
-    {{- if ( .Omg.Enabled ) | default false }}
-    <script src="https://status.lol/{{- .Omg.Name -}}.js?time&link&fluent"></script>
+  </section>
+  <section>
+    {{- if ( .Omg.Status ) | default false }}
+    {{- partial "omg_status.html" -}}
     {{- end }}
   </section>
-  <footer class="entry-footer">
+  <section class="entry-footer">
     {{- partial "social_icons.html" (dict "icons" site.Params.socialIcons "svg" $.Site.Data.svg "MaskedEmail"
     site.Params.MaskedEmail "Email" site.Params.Email) -}}
-  </footer>
+  </section>
 </article>
 {{- end -}}
 

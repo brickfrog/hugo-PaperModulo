@@ -1,14 +1,10 @@
-.container {
-    background-color: var(--tertiary-bg);
-    margin-top: 15px;
-}
-
 .micro-link,
 .micro-content {
     font-size: 14px;
-    margin: 0;
     padding-left: 10px;
     display: table-cell;
+    color: var(--secondary);
+
 }
 
 .micro-link {
@@ -16,6 +12,10 @@
     min-width: 90px;
 }
 
-.micro-content {
-    color: var(--secondary);
+.micro-content:hover {
+    background-color: var(--code-bg);
+}
+
+.micro-link:hover {
+    color: var(--link-hover-color);
 }
