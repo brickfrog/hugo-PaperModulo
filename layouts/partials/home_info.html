@@ -7,14 +7,14 @@
   <section class="entry-content">
     {{- trim .Content "\n" | markdownify -}}
   </section>
+  <section class="entry-footer">
+    {{- partial "social_icons.html" (dict "icons" site.Params.socialIcons "svg" $.Site.Data.svg "MaskedEmail"
+    site.Params.MaskedEmail "Email" site.Params.Email) -}}
+  </section>
   <section>
     {{- if ( .Omg.Status ) | default false }}
     {{- partial "omg_status.html" -}}
     {{- end }}
-  </section>
-  <section class="entry-footer">
-    {{- partial "social_icons.html" (dict "icons" site.Params.socialIcons "svg" $.Site.Data.svg "MaskedEmail"
-    site.Params.MaskedEmail "Email" site.Params.Email) -}}
   </section>
 </article>
 {{- end -}}

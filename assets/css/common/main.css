@@ -63,8 +63,9 @@ mark {
 }
 
 .social-icons {
-    padding: 12px 0;
-    margin-top: 12px;
+    padding: 3px 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .social-icons a {
@@ -249,4 +250,10 @@ figure>img {
 .image-size-control>img {
     width: inherit;
     height: inherit;
+}
+
+hr.vibe {
+    border: 3px;
+    border-bottom: 1px solid var(--primary);
+    margin: 1.5em 0 1.5em 0;
 }
