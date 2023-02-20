@@ -252,8 +252,8 @@ figure>img {
     height: inherit;
 }
 
-hr.vibe {
+hr.homeinfo-divider {
     border: 3px;
-    border-bottom: 1px solid var(--primary);
-    margin: 1.5em 0 1.5em 0;
+    border-bottom: 1px solid var(--link-hover-color);
+    margin: 0.25em 0 1.5em 0;
 }
