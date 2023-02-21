@@ -1,11 +1,27 @@
 {{- with site.Params.homeInfoParams }}
 
+<script>
+  function createStatusLol(parentNode) {
+    var statuslol = document.createElement("div");
+    statuslol.className = "statuslol";
+    var parentNode = document.querySelector(".statuslol_container");
+    parentNode.appendChild(statuslol);
+    var statuslol_text = document.createElement("p");
+    statuslol_text.textContent = "status.lol is currently offline / having trouble connecting.";
+    statuslol.appendChild(statuslol_text);
+  }
+</script>
+
 <div class="statuslol_container">
     <h3>{{- .Omg.StatusTitle -}}</h3>
     <hr class="homeinfo-divider">
-    <script src="https://status.lol/{{- .Omg.Name -}}.js?time&link&fluent"></script>
+    <script src="https://status.lol/{{- .Omg.Name -}}.js?time&link&fluent" onerror="createStatusLol()"></script>
+    <noscript>
+        <div class="statuslol">
+            <p> Javascript is disabled. Please enable it to see the latest status.lol </p>
+        </div>
+    </noscript>
 </div>
-
 
 <style>
 

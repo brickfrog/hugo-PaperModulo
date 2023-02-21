@@ -411,8 +411,6 @@ h6:hover .anchor {
     overflow-x: auto;
 }
 
-.share-buttons a {}
-
 .share-buttons a:not(:last-of-type) {
     margin-inline-end: 12px;
 }
