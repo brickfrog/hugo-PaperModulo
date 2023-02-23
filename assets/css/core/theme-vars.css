@@ -1,6 +1,6 @@
 :root {
     --gap: 20px;
-    --content-gap: 20px;
+    --content-gap: 15px;
     --nav-width: 690px;
     --main-width: 650px;
     --post-width: 650px;
@@ -11,6 +11,7 @@
     --theme: rgb(245, 245, 245);
     --entry: rgb(240, 240, 240);
     --primary: rgb(30, 30, 30);
+    --primary-opaque: rgb(30, 30, 30, 0.25);
     --secondary: rgb(59, 59, 59);
     --tertiary: rgb(158, 158, 158);
     --tertiary-bg: rgb(255,255,255);
@@ -32,6 +33,7 @@
     --theme: rgb(34, 33, 44);
     --entry: rgb(40, 42, 54);
     --primary: rgb(218, 218, 219);
+    --primary-opaque: rgb(218, 218, 219, 0.25);
     --secondary: rgb(182, 183, 184);
     --tertiary: rgb(123, 124, 124);
     --tertiary-bg: rgb(38, 36, 50);

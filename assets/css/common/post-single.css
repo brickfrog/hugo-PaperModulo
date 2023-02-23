@@ -5,7 +5,7 @@
 
 .post-title {
     font-size: 36px;
-    margin: var(--content-gap) 0;
+    margin: calc(var(--content-gap) * 0.5) 0;
 }
 
 .post-description {
@@ -18,7 +18,7 @@
 
 .post-meta,
 .breadcrumbs {
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .breadcrumbs {
@@ -31,18 +31,18 @@
 }
 
 .post-content {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--content);
 }
 
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    margin: 24px 0 16px;
+    margin: 15px 0 10px;
 }
 
 .post-content h3 {
-    margin: 32px 0 24px;
+    margin: 20px 0 16px;
 }
 
 .post-content h1 {
@@ -51,7 +51,7 @@
 }
 
 .post-content h2 {
-    margin: 40px auto 32px;
+    margin: 20px auto 16px;
     font-size: 28px;
 }
 
@@ -244,7 +244,6 @@ h6:hover .anchor {
     border-radius: var(--radius);
 }
 
-/* TODO refactor this shit */
 .post-content code {
     /* inline code */
     background-color: var(--code-bg);
