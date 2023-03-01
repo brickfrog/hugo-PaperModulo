@@ -50,8 +50,8 @@
 
 .post-entry {
     position: relative;
-    margin-bottom: var(--gap);
-    padding: var(--gap);
+    margin-bottom: calc(var(--gap)/2);
+    padding: calc(var(--gap)*.75);
     background: var(--tertiary-bg);
     border-radius: var(--radius);
 }
@@ -75,8 +75,8 @@
 }
 
 .entry-header h2 {
-    font-size: 24px;
-    line-height: 1.3;
+    font-size: 16px;
+    line-height: 1.0;
     transition: var(--link-transition);
     display: inline-block;
 }

@@ -1,0 +1,25 @@
+{{ $re := .File.BaseFileName | replaceRE "(.*)\\..*$" "$1" }}
+{{ $backlinks := slice }}
+{{ range .Site.AllPages }}
+   {{ if and (or (findRE (printf "\\[.*\\]\\({{< relref \"%s.md\".*" $re) .RawContent) (findRE (printf "\\[.*\\]\\(/%s.*" $re) .RawContent)) (not (eq $re .File.BaseFileName)) }}
+        {{ $backlinks = $backlinks | append . }}
+   {{ end }}
+{{ end }}
+
+{{ if gt (len $backlinks) 0 }}
+    {{ if .Params.backlinks | default true}}
+    <hr class="backlinks-divider">
+    <div class="bl-section">
+        <details open>
+            <summary> Backlinks </summary>
+            <div class="backlinks">
+            <ul>
+            {{ range $backlinks }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+            </ul>
+            </div>
+        </details>
+    </div>
+    {{ end }}
+{{ end }}

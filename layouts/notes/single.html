@@ -15,9 +15,6 @@
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
-      {{/* TODO move to footer */}}
-      {{/* partial "edit_post.html" . */}}
-      {{/* partial "post_canonical.html" . */}}
     </div>
     {{- end }}
   </header>
@@ -47,9 +44,6 @@
     {{- end }}
   </footer>
 
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
-  {{- end }}
 </article>
 
 {{- end }}{{/* end main */}}

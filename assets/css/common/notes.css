@@ -1,0 +1,37 @@
+.note-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .note-link {
+    flex-grow: 1;
+  }
+  
+  .note-date {
+    margin-left: 10px;
+  }
+  
+  .notes-list {
+    margin: 0;
+  }
+
+  .collapse-all-button {
+    background-color: var(--theme);
+    border: none;
+    color: var(--primary);
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .collapse-all-button:active {
+    background-color: var(--link-hover-color);
+    color: white;
+  }
+  
