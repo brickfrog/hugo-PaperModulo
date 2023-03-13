@@ -1,0 +1,39 @@
+{{ $db_name := .Get "db" }}
+{{ $db_path := .Get "path" }}
+{{ $editable := .Get "editable" | default true }}
+
+<script>
+
+    const scriptPaths = [
+        "/js/sqlite3.js",
+        "/js/sqlime-db.js",
+        "/js/sqlime-examples.js"
+      ];
+      
+      function loadScript(src) {
+        var script = document.createElement("script");
+        script.src = src;
+        document.head.appendChild(script);
+      }
+      
+      scriptPaths.forEach(function(path) {
+        if (!document.querySelector(`script[src="${path}"]`)) {
+          loadScript(path);
+        }
+      });
+
+</script>
+
+<div class="bordered">
+    <div class="code">
+    <pre class="sqlime">{{- .Inner -}}</pre></div>
+    <noscript><p> To run this SQL statement, please enable javascript.</p></noscript>  
+</div>
+
+
+  <sqlime-db name="{{ $db_name }}" path="{{ $db_path }}"></sqlime-db>
+{{ if (eq $editable true) }}
+  <sqlime-examples db="{{ $db_name }}" selector="pre.sqlime" editable></sqlime-examples>
+{{ else }}
+  <sqlime-examples db="{{ $db_name }}" selector="pre.sqlime"></sqlime-examples>
+{{ end }}
