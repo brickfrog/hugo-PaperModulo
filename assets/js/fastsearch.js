@@ -100,53 +100,51 @@ sInput.onkeyup = function (e) {
       let resultSet = ""; // our results bucket
 
       for (let item in results) {
+        let highlightedSummary = "";
 
-        let highlightedSummary = '';
-        
         for (let match in results[item].matches) {
           let match_indexes = results[item].matches[match].indices;
 
-          console.log(match_indexes)
-      
           switch (results[item].matches[match].key) {
-              case 'title':
-                summary = "Title: " + results[item].item.title;
-                offset = 7;
-                break;
-              case 'summary':
-                summary = "Summary: " + results[item].item.summary;
-                offset = 9;
-                break;
-              case 'content':
-                summary = "Content: " + results[item].item.content;
-                offset = 9;
-                break;
-              default:
-                break;
+            case "title":
+              summary = "Title: " + results[item].item.title;
+              offset = 7;
+              break;
+            case "summary":
+              summary = "Summary: " + results[item].item.summary;
+              offset = 9;
+              break;
+            case "content":
+              summary = "Content: " + results[item].item.content;
+              offset = 9;
+              break;
+            default:
+              break;
           }
-      
+
           let startIndex = 0;
           let lastIndex = 0;
           let endIndex = 0;
-      
-          for (let i = 0; i < match_indexes.length; i++) {
-              startIndex = match_indexes[i][0] + offset;
-              endIndex = match_indexes[i][1] + offset + 1;
-      
-              highlightedSummary += summary.substring(lastIndex, startIndex);
-              highlightedSummary += '<mark>' + summary.substring(startIndex, endIndex) + '</mark>';
-              lastIndex = endIndex;
-              break;
-          }
-      
-          highlightedSummary += summary.substring(lastIndex);
-          highlightedSummary = highlightedSummary.substring(startIndex - 150, endIndex + 150);
 
-          console.log(startIndex)
-          console.log(highlightedSummary)
+          for (let i = 0; i < match_indexes.length; i++) {
+            startIndex = match_indexes[i][0] + offset;
+            endIndex = match_indexes[i][1] + offset + 1;
+
+            highlightedSummary += summary.substring(lastIndex, startIndex);
+            highlightedSummary +=
+              "<mark>" + summary.substring(startIndex, endIndex) + "</mark>";
+            lastIndex = endIndex;
+            break;
+          }
+
+          highlightedSummary += summary.substring(lastIndex);
+          highlightedSummary = highlightedSummary.substring(
+            startIndex - 150,
+            endIndex + 150
+          );
+
           break;
-      }
-      
+        }
 
         resultSet +=
           `<li class="post-entry"><header class="entry-header">${
