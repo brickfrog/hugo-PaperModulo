@@ -53,7 +53,7 @@ $sidenote-offset: 1.20rem;
 
 .sidenote-content.sidenote-left {
     left: 0;
-    margin-left: -20rem;
+    margin-left: -($sidenote-width + $sidenote-offset);
 }
 
 @media screen and (max-width: $maximum-width) {
