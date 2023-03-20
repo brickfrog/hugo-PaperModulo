@@ -15,6 +15,7 @@
 }
 
 mark {
+    color: var(--primary);
     margin: 0 -0.4em;
     padding: 0.1em 0.4em;
     border-radius: 0.8em 0.3em;
@@ -263,3 +264,37 @@ hr.backlinks-divider {
     border-bottom: 1px solid var(--link-hover-color);
     margin: 1.5em 0 1.5em 0;
 }
+
+/* Alerts */
+
+.alert {
+    position: relative;
+    padding: 0rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+  }
+  
+  .alert-warning {
+    border-style: solid;
+    border-color: #ed6a5a;
+    border-width: 0 0 0 4px;
+  }
+
+  .alert-primary {
+    border-style: solid;
+    border-color: #3063AE;
+    border-width: 0 0 0 4px;
+  }
+  
+  .alert-heading {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+  }
+
+  .alert-warning .alert-heading {
+    color: #ed6a5a;
+  }
+
+  .alert-primary .alert-heading {
+    color: #3063AE;
+  }

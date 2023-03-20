@@ -92,6 +92,11 @@
     -webkit-line-clamp: 2;
 }
 
+.entry-content.search {
+    display: block;
+    float: right;
+}
+
 .entry-footer,
 .entry-footer span>a {
     color: var(--secondary);
@@ -128,3 +133,12 @@
     color: var(--secondary);
     box-shadow: 0 1px 0 var(--primary);
 }
+
+/* for dropcaps */
+.post-content > p:first-of-type::first-letter {
+    color: var(--primary);
+    font-size: 3.0em;
+    float: left;
+    margin-right: 0.2em;
+    line-height: 1.0em;
+  }

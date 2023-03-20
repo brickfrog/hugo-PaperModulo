@@ -21,5 +21,6 @@
 
 {{- if site.Params.homeInfoParams.MicroBlog.Url }}
 {{- partial "micro_feed.html" -}}
-<br>
+{{ else }}
+<hr class="homeinfo-divider">
 {{- end -}}
