@@ -1,7 +1,7 @@
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
   <header class="entry-header">
-    <h1>{{ .Title | markdownify }}</h1>
+    <h3>{{ .Title | markdownify }}</h3>
     <h6>{{ .Subtitle | markdownify }}</h6>
   </header>
   <section class="entry-content">
@@ -17,10 +17,14 @@
     {{- end }}
   </section>
 </article>
+{{- if .Columns.Enabled }}
+{{- partial "home_info_columns.html" -}}
+{{- end -}}
 {{- end -}}
 
 {{- if site.Params.homeInfoParams.MicroBlog.Url }}
 {{- partial "micro_feed.html" -}}
 {{ else }}
+<h2> Posts </h2>
 <hr class="homeinfo-divider">
 {{- end -}}

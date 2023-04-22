@@ -1,0 +1,13 @@
+/* Profile Home Containers */
+
+.info-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+.info-columns.column {
+    width: 48%;
+    flex: 50%;
+    box-sizing: border-box;
+}

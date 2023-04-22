@@ -5,6 +5,7 @@
     font-weight: bold;
     border: 2px solid var(--tertiary-bg);
     border-radius: var(--radius);
+    background-color: var(--tertiary-bg);
 }
 
 #searchbox input:focus {

@@ -244,6 +244,8 @@ h6:hover .anchor {
 /* code block */
 .post-content .chroma {
     border-radius: var(--radius);
+    font-size: 0.9em;
+    line-height: 1.70em;
 }
 
 .post-content code {
@@ -322,7 +324,7 @@ h6:hover .anchor {
 }
 
 .toc {
-    margin: 0 2px 2px 2px;
+    margin: 0 1.5em 2px 2px;
     border: 1px solid var(--border);
     background: var(--code-bg);
     border-radius: var(--radius);
@@ -335,15 +337,16 @@ h6:hover .anchor {
 }
 
 .toc.side {
-    font-size: .8em;
-    margin-right: 1.5em;
+    font-size: 0.9em;
 }
 
 @media screen and (min-width: 1150px) {
     .toc.side {
         position: absolute;
-        top: 150px;
-        margin-left: -250px;
+        border: none;
+        background: none;
+        top: 5rem;
+        margin-left: -225px;
         z-index: 1;
         max-height: calc(100% - 300px);
         overflow: auto;
@@ -354,12 +357,14 @@ h6:hover .anchor {
     }
 
     .toc.side.left {
-        left: 15px;
+        position: fixed;
+        left: 14.5rem;
         width: 210px;
     }
 
     .toc.side.right {
-        right: -230px;
+        position: fixed;
+        right: -2rem;
         width: 210px;
     }
 }

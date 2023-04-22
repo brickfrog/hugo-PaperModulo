@@ -17,6 +17,9 @@
     {{- partialCached "header.html" . .Page -}}
     <main class="main {{- if (eq .Kind `page`) -}}{{- print " post" -}}{{- end -}}">
         {{- block "main" . }}{{ end }}
+        {{- if ( site.Params.showsidelinks ) | default true }}
+        {{- partial "side-links.html" . -}}
+        {{- end }}
     </main>
     {{ partial "footer.html" . -}}
     {{- block "body_end" . }}{{ end }}

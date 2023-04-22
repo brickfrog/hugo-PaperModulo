@@ -57,8 +57,7 @@
 }
 
 .post-entry:hover {
-    transform: scale(1.02) translate3d(0, 0, 0);
-    box-shadow: 1px 16px 29px -5px rgba(0, 0, 0, 0.75);
+    transform: scale(1.01) translate3d(0, 0, 0);
 }
 
 .post-entry:hover .entry-header h2 {
