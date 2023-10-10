@@ -83,8 +83,8 @@ mark {
 
 .social-icons {
     padding: 3px 0;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .social-icons a {
@@ -94,12 +94,12 @@ mark {
 }
 
 .social-icons a:not(:last-of-type) {
-    margin-right: 12px;
+    margin-right: 8px;
 }
 
 .social-icons a svg {
-    height: 26px;
-    width: 26px;
+    height: 20px;
+    width: 20px;
 }
 
 .social-icons a:hover {
@@ -144,8 +144,8 @@ pre:hover .copy-code {
 
 .meta-item:not(:last-of-type):after {
     content: "·";
-    margin-inline-start: .5em;
-    margin-inline-end: .5em;
+    margin-inline-start: .25em;
+    margin-inline-end: .25em;
 }
 
 .meta-item svg {
@@ -166,10 +166,6 @@ pre:hover .copy-code {
 
 .meta-item .post-tags a:not(:last-of-type) {
     margin-inline-end: .3em;
-}
-
-.meta-item .post-tags a:not(:last-of-type):after {
-    content: ",";
 }
 
 .meta-item .post-tags a:before {

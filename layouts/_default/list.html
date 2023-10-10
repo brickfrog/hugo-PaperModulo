@@ -72,13 +72,13 @@
   {{- if (ne (.Param "hideSummary") true) }}
   <section class="entry-content">
     {{ if .Description }}
-    <p>{{ .Description | plainify | htmlUnescape }}</p>
+    <p>{{ .Description }}</p>
     {{ else }}
-    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    <p>{{ .Summary }}{{ if .Truncated }}...{{ end }}</p>
     {{ end }}
   </section>
   {{- end }}
-  {{- if not (.Param "hideMeta") }}
+  {{- if not (.Param "hideMetaList") }}
   <footer class="entry-footer">
     {{- partial "post_meta.html" . -}}
   </footer>
