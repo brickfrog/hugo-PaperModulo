@@ -91,58 +91,61 @@
     document.addEventListener('DOMContentLoaded', () => {
         const toggleReaderBtnOn = document.getElementById('toggle-reader-on');
         const toggleReaderBtnOff = document.getElementById('toggle-reader-off');
+        const main = document.querySelector('main');
         const mainPost = document.querySelector('.main.post');
         const postSingle = document.querySelector('.post-single');
         const tocSide = document.querySelector('.toc.side');
         const headerBar = document.querySelector('.header');
         const savedReaderMode = localStorage.getItem('readerMode');
-
+    
         toggleReaderBtnOff.disabled = true;
-
+    
         if (savedReaderMode === 'enabled') {
+            if (main) main.classList.add('reduced-padding');  // Toggle reduced-padding class
             if (mainPost) mainPost.classList.add('full-width');
             if (postSingle) postSingle.classList.add('margin-expanded');
             if (tocSide) tocSide.classList.toggle('side');
             headerBar.classList.toggle('hidden');
-
+    
             toggleReaderBtnOn.classList.add('toggled');
             toggleReaderBtnOn.disabled = true;
-
+    
             toggleReaderBtnOff.classList.remove('toggled');
             toggleReaderBtnOff.disabled = false;
             localStorage.setItem('readerMode', 'enabled');
         } else {
             toggleReaderBtnOff.disabled = true;
         }
-
+    
         toggleReaderBtnOn.addEventListener('click', () => {
+            if (main) main.classList.add('reduced-padding');  // Toggle reduced-padding class
             if (mainPost) mainPost.classList.add('full-width');
             if (postSingle) postSingle.classList.add('margin-expanded');
             if (tocSide) tocSide.classList.toggle('side');
             headerBar.classList.toggle('hidden');
             localStorage.setItem('readerMode', 'enabled');
-
-
+    
             toggleReaderBtnOn.classList.add('toggled');
             toggleReaderBtnOn.disabled = true;
-
+    
             toggleReaderBtnOff.classList.remove('toggled');
             toggleReaderBtnOff.disabled = false;
         });
-
+    
         toggleReaderBtnOff.addEventListener('click', () => {
+            if (main) main.classList.remove('reduced-padding');  // Toggle reduced-padding class
             if (mainPost) mainPost.classList.remove('full-width');
             if (postSingle) postSingle.classList.remove('margin-expanded');
             if (tocSide) tocSide.classList.toggle('side');
             headerBar.classList.toggle('hidden');
             localStorage.setItem('readerMode', 'disabled');
-
+    
             toggleReaderBtnOff.classList.add('toggled');
             toggleReaderBtnOff.disabled = true;
-
+    
             toggleReaderBtnOn.classList.remove('toggled');
             toggleReaderBtnOn.disabled = false;
-
         });
     });
+    
 </script>

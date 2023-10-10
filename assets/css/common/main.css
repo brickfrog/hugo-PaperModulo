@@ -1,12 +1,25 @@
 /* for home and other pages */
+.header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
 .main {
     position: relative;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
     max-width: calc(var(--main-width) + var(--gap) * 2);
     margin: auto;
-    padding: var(--gap);
+    padding-top: var(--header-height);
+    padding-left: var(--gap);
+    padding-right: var(--gap);
+    padding-bottom: var(--gap);
     background-color: var(--entry);
-    opacity: 99%;
+    opacity: 100%;
+}
+
+.main.reduced-padding {
+    padding-top: 10px;  /* Set this to whatever value you want */
 }
 
 .mark-line {
@@ -259,6 +272,12 @@ hr.homeinfo-divider {
     margin: 0.25em 0 1.5em 0;
 }
 
+hr.now-divider {
+    border: 0px !important;
+    border-bottom: 1px solid var(--link-hover-color) !important;
+    margin: 0em 0 1em 0 !important;
+}
+
 hr.backlinks-divider {
     border: 3px;
     border-bottom: 1px solid var(--link-hover-color);
@@ -297,4 +316,8 @@ hr.backlinks-divider {
 
   .alert-primary .alert-heading {
     color: #3063AE;
+  }
+
+  .details summary {
+    cursor: pointer;
   }

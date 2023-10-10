@@ -51,12 +51,24 @@
     transition: opacity 2s ease;
 }
 
-.main.post.full-width {
-    max-width: 80%;
+/* Full-width styles for smaller screens */
+@media (max-width: 768px) {
+    .main.post.full-width,
+    .post-single.margin-expanded {
+        max-width: 100%;
+    }
 }
 
-.post-single.margin-expanded {
-    margin-left: 45px;
+/* Full-width styles for larger screens */
+@media (min-width: 769px) {
+    .main.post.full-width {
+        max-width: 100%;
+    }
+
+    .post-single.margin-expanded {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
 }
 
 .hidden {
