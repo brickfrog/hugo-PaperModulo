@@ -45,9 +45,14 @@ mark {
     margin-bottom: 0em;
 }
 
-.entry-header h6 {
-    margin-top: 0.25em;
+.entry-header h5 {
+    margin-top: 0.15em;
     margin-left: 1.5em;
+}
+
+.entry-header h6 {
+    margin-top: 0.15em;
+    margin-left: 4.5em;
 }
 
 /* for post page */
