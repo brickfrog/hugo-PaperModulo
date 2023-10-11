@@ -1,5 +1,4 @@
 {{- define "main" }}
-
 {{- if .Title }}
 <header class="page-header">
     <h1>{{ .Title }}</h1>
@@ -10,7 +9,7 @@
     {{- end }}
 </header>
 {{- end }}
-
+<button id="toggleSortButton" class="button">Toggle Tag Sort Order</button>
 <ul class="terms-tags">
     {{- $type := .Type }}
     {{- range $key, $value := .Data.Terms.Alphabetical }}
@@ -23,5 +22,32 @@
     {{- end }}
     {{- end }}
 </ul>
+
+<script>
+    let alphabetical = true;
+
+document.getElementById('toggleSortButton').addEventListener('click', () => {
+    const list = document.querySelector('.terms-tags');
+    const itemsArray = Array.from(list.querySelectorAll('li'));
+    list.innerHTML = '';
+    
+    if (alphabetical) {
+        itemsArray.sort((a, b) => {
+            return parseInt(b.querySelector('sup').textContent) - parseInt(a.querySelector('sup').textContent);
+        });
+    } else {
+        itemsArray.sort((a, b) => {
+            return a.querySelector('a').textContent.localeCompare(b.querySelector('a').textContent);
+        });
+    }
+    
+    alphabetical = !alphabetical;
+    
+    itemsArray.forEach(item => {
+        list.appendChild(item);
+    });
+});
+
+</script>
 
 {{- end }}{{/* end main */ -}}
