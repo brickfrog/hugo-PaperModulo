@@ -3,6 +3,10 @@
     margin: 32px 0;
 }
 
+.post-single {
+    position: relative;
+}
+
 .post-title {
     font-size: 32px;
     margin: calc(var(--content-gap) * 0.5) 0;
@@ -342,11 +346,11 @@ h6:hover .anchor {
 
 @media screen and (min-width: 1150px) {
     .toc.side {
-        position: absolute;
+        position: sticky;
         border: none;
         background: none;
         top: 5rem;
-        margin-left: -225px;
+        margin-left: calc((-1 * var(--post-width) / 2) + 25px + var(--post-width)/ 10); 
         z-index: 1;
         max-height: calc(100% - 300px);
         overflow: auto;
@@ -357,9 +361,9 @@ h6:hover .anchor {
     }
 
     .toc.side.left {
-        position: fixed;
-        left: 14.5rem;
+        position: sticky;
         width: 210px;
+        top: 50px;
     }
 
     .toc.side.right {
