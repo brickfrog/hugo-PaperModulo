@@ -1,14 +1,90 @@
+<style>
+    body {
+        visibility: visible;
+    }
+</style>
+
+<script>
+    // Theming
+    const storageKey = 'pref-theme';
+
+    const onClick = () => {
+        const isDark = isDarkTheme();
+        if (isDark) {
+            setPrefTheme('light');
+        } else {
+            setPrefTheme('dark');
+        }
+    };
+
+    const isDarkTheme = () => {
+        return document.body.classList.contains("dark");
+    };
+
+    const getPrefTheme = () => {
+        const savedTheme = localStorage.getItem(storageKey);
+        if (savedTheme) return savedTheme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const setPrefTheme = (theme) => {
+        localStorage.setItem(storageKey, theme);
+        reflectPreference(theme);
+    };
+
+    const reflectPreference = (theme) => {
+        if (theme === "dark") {
+            document.body.classList.add("dark");
+            document.firstElementChild.setAttribute('data-theme', 'dark');
+        } else {
+            document.body.classList.remove("dark");
+            document.firstElementChild.setAttribute('data-theme', 'light');
+        }
+        // Only after setting the theme, then set the visibility to visible.
+        setTimeout(() => {
+            document.body.classList.add("theme-loaded");
+        }, 50); // A short delay to ensure the theme is applied before making the body visible.
+    };
+
+
+
+    // Load theme as early as possible to avoid flashes
+    // Immediate self-executing function to set theme
+    (function () {
+        const theme = getPrefTheme();
+        reflectPreference(theme);
+    })();
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Add theme toggle click event
+        document.querySelector('#theme-toggle').addEventListener('click', onClick);
+
+        // Sync with system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches: isDark }) => {
+            setPrefTheme(isDark ? 'dark' : 'light');
+        });
+
+        window.addEventListener('toggle-theme', function () {
+            onClick();
+        });
+    });
+
+</script>
+
 <div class="right-container">
 
     <!-- For Links -->
     <div class="right-box">
-        <a href="{{ "" | relURL }}" {{ if eq .RelPermalink "/" }}class="active" {{ end }}
-        title="Travel to home page">
-        <svg width="20px" height="20px" stroke="currentColor" fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <path d="M31.772 16.043l-15.012-15.724c-0.189-0.197-0.449-0.307-0.721-0.307s-0.533 0.111-0.722 0.307l-15.089 15.724c-0.383 0.398-0.369 1.031 0.029 1.414 0.399 0.382 1.031 0.371 1.414-0.029l1.344-1.401v14.963c0 0.552 0.448 1 1 1h6.986c0.551 0 0.998-0.445 1-0.997l0.031-9.989h7.969v9.986c0 0.552 0.448 1 1 1h6.983c0.552 0 1-0.448 1-1v-14.968l1.343 1.407c0.197 0.204 0.459 0.308 0.722 0.308 0.249 0 0.499-0.092 0.692-0.279 0.398-0.382 0.411-1.015 0.029-1.413zM26.985 14.213v15.776h-4.983v-9.986c0-0.552-0.448-1-1-1h-9.965c-0.551 0-0.998 0.445-1 0.997l-0.031 9.989h-4.989v-15.777c0-0.082-0.013-0.162-0.032-0.239l11.055-11.52 10.982 11.507c-0.021 0.081-0.036 0.165-0.036 0.252z"></path>
-        </svg>
-    </a>
-        <a href="{{ "search" | relURL }}" {{ if eq .RelPermalink "/search/" }}class="active" {{ end }}
+        <a href="{{ "" | relURL }}" {{ if eq .RelPermalink "/" }}class="active" {{ end }} title="Travel to home page">
+            <svg width="20px" height="20px" stroke="currentColor" fill="currentColor" viewBox="0 0 32 32" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M31.772 16.043l-15.012-15.724c-0.189-0.197-0.449-0.307-0.721-0.307s-0.533 0.111-0.722 0.307l-15.089 15.724c-0.383 0.398-0.369 1.031 0.029 1.414 0.399 0.382 1.031 0.371 1.414-0.029l1.344-1.401v14.963c0 0.552 0.448 1 1 1h6.986c0.551 0 0.998-0.445 1-0.997l0.031-9.989h7.969v9.986c0 0.552 0.448 1 1 1h6.983c0.552 0 1-0.448 1-1v-14.968l1.343 1.407c0.197 0.204 0.459 0.308 0.722 0.308 0.249 0 0.499-0.092 0.692-0.279 0.398-0.382 0.411-1.015 0.029-1.413zM26.985 14.213v15.776h-4.983v-9.986c0-0.552-0.448-1-1-1h-9.965c-0.551 0-0.998 0.445-1 0.997l-0.031 9.989h-4.989v-15.777c0-0.082-0.013-0.162-0.032-0.239l11.055-11.52 10.982 11.507c-0.021 0.081-0.036 0.165-0.036 0.252z">
+                </path>
+            </svg>
+        </a>
+        <a href="{{ " search" | relURL }}" {{ if eq .RelPermalink "/search/" }}class="active" {{ end }}
             title="Travel to /search page">
             <svg height="20px" width="20px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" stroke="currentColor"
@@ -28,10 +104,35 @@
             </svg>
         </a>
     </div>
-    
+
+    <!-- Color Theming -->
+    <div class="right-box">
+        <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto"
+            aria-live="polite">
+            <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                    <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                    <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+            </svg>
+        </button>
+    </div>
+
     <!-- For Reader Mode -->
     <div class="right-box">
-        <button id="toggle-reader-on" title="toggle 'reader mode' on - hiding unncessary elements and expanding width of body. Works on post pages only.">
+        <button id="toggle-reader-on"
+            title="toggle 'reader mode' on - hiding unncessary elements and expanding width of body. Works on post pages only.">
             <svg height="20px" width="20px" stroke="currentColor" fill="currentColor" version="1.1" id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 472.615 472.615" xml:space="preserve">
@@ -49,7 +150,8 @@
                 </g>
             </svg>
         </button>
-        <button id="toggle-reader-off" class="toggled" title="toggle 'reader mode' off - this is the default site experience">
+        <button id="toggle-reader-off" class="toggled"
+            title="toggle 'reader mode' off - this is the default site experience">
             <svg height="20px" width="20px" stroke="currentColor" fill="currentColor" version="1.1" id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 492.308 492.308" xml:space="preserve">
@@ -69,6 +171,8 @@
 </div>
 
 <script>
+
+
     // * Scroll fade out effect * //
     // Select the right-box div
     const topRightDiv = document.querySelector('.right-container');
@@ -97,26 +201,26 @@
         const tocSide = document.querySelector('.toc.side');
         const headerBar = document.querySelector('.header');
         const savedReaderMode = localStorage.getItem('readerMode');
-    
+
         toggleReaderBtnOff.disabled = true;
-    
+
         if (savedReaderMode === 'enabled') {
             if (main) main.classList.add('reduced-padding');  // Toggle reduced-padding class
             if (mainPost) mainPost.classList.add('full-width');
             if (postSingle) postSingle.classList.add('margin-expanded');
             if (tocSide) tocSide.classList.toggle('side');
             headerBar.classList.toggle('hidden');
-    
+
             toggleReaderBtnOn.classList.add('toggled');
             toggleReaderBtnOn.disabled = true;
-    
+
             toggleReaderBtnOff.classList.remove('toggled');
             toggleReaderBtnOff.disabled = false;
             localStorage.setItem('readerMode', 'enabled');
         } else {
             toggleReaderBtnOff.disabled = true;
         }
-    
+
         toggleReaderBtnOn.addEventListener('click', () => {
             if (main) main.classList.add('reduced-padding');  // Toggle reduced-padding class
             if (mainPost) mainPost.classList.add('full-width');
@@ -124,14 +228,14 @@
             if (tocSide) tocSide.classList.toggle('side');
             headerBar.classList.toggle('hidden');
             localStorage.setItem('readerMode', 'enabled');
-    
+
             toggleReaderBtnOn.classList.add('toggled');
             toggleReaderBtnOn.disabled = true;
-    
+
             toggleReaderBtnOff.classList.remove('toggled');
             toggleReaderBtnOff.disabled = false;
         });
-    
+
         toggleReaderBtnOff.addEventListener('click', () => {
             if (main) main.classList.remove('reduced-padding');  // Toggle reduced-padding class
             if (mainPost) mainPost.classList.remove('full-width');
@@ -139,13 +243,13 @@
             if (tocSide) tocSide.classList.toggle('side');
             headerBar.classList.toggle('hidden');
             localStorage.setItem('readerMode', 'disabled');
-    
+
             toggleReaderBtnOff.classList.add('toggled');
             toggleReaderBtnOff.disabled = true;
-    
+
             toggleReaderBtnOn.classList.remove('toggled');
             toggleReaderBtnOn.disabled = false;
         });
     });
-    
+
 </script>
