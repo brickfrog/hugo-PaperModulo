@@ -5,7 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    height: 100%;
+    width: 100%;
     font-size: 1.25em;
     font-weight: 1000;
+}
+
+.not-found pre {
+    white-space: pre-wrap;  /* CSS3 */
+    word-wrap: break-word;
+    font-size: large;
+    font-family: 'Courier New', sans-serif;
 }
