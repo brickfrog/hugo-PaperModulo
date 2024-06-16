@@ -74,17 +74,17 @@
 }
 
 .entry-header h2 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.0;
     transition: var(--link-transition);
     display: inline-block;
 }
 
 .entry-content {
-    margin: 8px 0;
+    margin: 4px 0;
     color: var(--secondary);
-    font-size: 14px;
-    line-height: 1.4em;
+    font-size: 13px;
+    line-height: 1.3em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -99,7 +99,7 @@
 .entry-footer,
 .entry-footer span>a {
     color: var(--secondary);
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .entry-link {
