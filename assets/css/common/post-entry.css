@@ -52,7 +52,7 @@
     position: relative;
     margin-bottom: calc(var(--gap)/2);
     padding: calc(var(--gap)*.75);
-    background: var(--tertiary-bg);
+    background: var(--background);
     border-radius: var(--radius);
 }
 
