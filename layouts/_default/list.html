@@ -31,6 +31,11 @@
 {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- end }}
 
+{{ $category := lower .Title }}
+{{ with index .Site.Data.categories $category }}
+    <div class="category-text">{{ . | markdownify }}</div>
+{{ end }}
+
 {{/* related issue: https://github.com/gohugoio/hugo/issues/9003 */}}
 {{ $paginator := "" }}
 {{ if (.Param "paginate") }}

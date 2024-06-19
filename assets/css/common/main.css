@@ -55,6 +55,13 @@ mark {
     margin-left: 4.5em;
 }
 
+/* pot list */
+
+.category-text {
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
 /* for post page */
 .main.post {
     max-width: calc(var(--post-width) + var(--gap) * 2);
@@ -296,6 +303,7 @@ hr.backlinks-divider {
     padding: 0rem 1rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
+    filter: brightness(75%);
 }
 
 .alert-warning {
@@ -306,7 +314,7 @@ hr.backlinks-divider {
 
 .alert-primary {
     border-style: solid;
-    border-color: #3063AE;
+    border-color: #BD93F9;
     border-width: 0 0 0 4px;
 }
 
@@ -321,7 +329,7 @@ hr.backlinks-divider {
 }
 
 .alert-primary .alert-heading {
-    color: #3063AE;
+    color: #BD93F9;
 }
 
 .details summary {
