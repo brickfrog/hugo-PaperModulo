@@ -1,0 +1,16 @@
+{{- $giscusConfig := site.Params.commentSystems.giscus }}
+<script src="https://giscus.app/client.js"
+        data-repo="{{ $giscusConfig.repo }}"
+        data-repo-id="{{ $giscusConfig.repoid }}"
+        data-category="{{ $giscusConfig.category }}"
+        data-category-id="{{ $giscusConfig.categoryid }}"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="0"
+        data-emit-metadata="0"
+        data-input-position="{{ $giscusConfig.inputposition }}"
+        data-theme="{{ $giscusConfig.theme }}"
+        data-lang="{{ $giscusConfig.lang }}"
+        crossorigin="anonymous"
+        async>
+</script>

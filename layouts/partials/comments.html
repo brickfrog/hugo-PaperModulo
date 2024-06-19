@@ -24,6 +24,12 @@
     {{- partial "utterances.html" . }}
   {{- end -}}
   {{- end -}}
+
+  {{- if $pageCommentSystems.giscus -}}
+  {{- with .giscus -}}
+    {{- partial "giscus.html" . }}
+  {{- end -}}
+  {{- end -}}
   
   {{- if $pageCommentSystems.disqus -}}
   {{- with .disqus -}}
