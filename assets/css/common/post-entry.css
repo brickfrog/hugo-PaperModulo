@@ -46,6 +46,8 @@
 
 .home-info .entry-content {
     -webkit-line-clamp: unset;
+    margin-left: 33px;
+    margin-right: 33px;
 }
 
 .post-entry {
