@@ -258,9 +258,11 @@ h6:hover .anchor {
 
 /* code block */
 .post-content .chroma {
+    background-color: var(--code-bg);
     border-radius: var(--radius);
-    font-size: 0.9em;
+    font-size: 0.8em;
     line-height: 1.70em;
+    box-shadow: 10px 10px 0 0 var(--code-shadow);
 }
 
 .post-content code {
@@ -276,10 +278,9 @@ h6:hover .anchor {
     /* reset inline code */
     display: block;
     margin: auto 0;
-    padding: 15px;
+    padding: 25px;
     overflow-x: auto;
     border-radius: var(--radius);
-    word-break: break-all;
 }
 
 .post-content .chroma code {
