@@ -298,23 +298,27 @@ hr.backlinks-divider {
 
 /* Alerts */
 
+
 .alert {
-    position: relative;
+    overflow: hidden;
+    position: block;
     padding: 0rem 1rem;
     margin-bottom: 1rem;
+    margin-left: 0rem;
     border: 1px solid transparent;
     filter: brightness(75%);
 }
 
+
 .alert-warning {
     border-style: solid;
-    border-color: #ed6a5a;
+    border-color: var(--alert-warning);
     border-width: 0 0 0 4px;
 }
 
 .alert-primary {
     border-style: solid;
-    border-color: #BD93F9;
+    border-color: var(--alert-primary);
     border-width: 0 0 0 4px;
 }
 
@@ -325,11 +329,11 @@ hr.backlinks-divider {
 }
 
 .alert-warning .alert-heading {
-    color: #ed6a5a;
+    color: var(--alert-warning);
 }
 
 .alert-primary .alert-heading {
-    color: #BD93F9;
+    color: var(--alert-primary);
 }
 
 .details summary {
