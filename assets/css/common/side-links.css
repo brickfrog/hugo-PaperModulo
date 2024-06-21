@@ -45,6 +45,10 @@
     opacity: 1;
 }
 
+.right-box svg {
+    color: var(--primary);
+}
+
 
 .fade-out {
     opacity: 0;

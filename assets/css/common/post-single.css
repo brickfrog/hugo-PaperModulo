@@ -346,6 +346,7 @@ h6:hover .anchor {
     border-radius: var(--radius);
     padding: 0.4em 0;
     float: inline-start;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 3px 10px rgba(0, 0, 0, 0.13);
 }
 
 .toc .details {
@@ -359,10 +360,13 @@ h6:hover .anchor {
 @media screen and (min-width: 1475px) {
     .toc.side {
         background: var(--background);
+        font-size: 1.25rem;
         margin-left: calc((-1 * var(--post-width) / 2) + var(--post-width)/ 10); 
         z-index: 1;
         max-height: calc(100% - 300px);
         overflow: auto;
+        box-shadow: 0px 0px 0px;
+
     }
 
     .toc.side::-webkit-scrollbar-thumb {
