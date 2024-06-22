@@ -34,14 +34,14 @@
 }
 
 .dark {
-    --theme: rgb(34, 33, 44);
-    --entry: rgb(34, 33, 44);
+    --theme: rgb(40, 42, 54);
+    --entry: rgb(40, 42, 54);
     --primary: rgb(218, 218, 219);
     --primary-opaque: rgba(224, 224, 229, 0.25);
     --secondary: rgb(182, 183, 184);
     --tertiary: rgb(123, 124, 124);
     --tertiary-bg: rgb(38, 36, 50);
-    --content: rgb(196, 196, 197);
+    --content: rgb(255, 255, 255);
     --code-bg: rgb(28, 27, 36);
     --border: rgb(51, 51, 51);
     --header-border: var(--link-hover-color);

@@ -64,6 +64,7 @@
 .post-content h2 {
     font-size: 26px;
     padding: 0.5em;
+    padding-left: 0;
     clear: left;
 }
 
