@@ -44,6 +44,9 @@
             {{- end }}
         </div>
         {{- end }}
+        {{- if .Columns.Enabled }}
+        {{- partial "home_info_columns.html" -}}
+        {{- end }}
     </div>
     {{- end}}
 </div>
