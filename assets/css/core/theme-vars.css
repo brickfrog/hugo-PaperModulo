@@ -56,3 +56,14 @@
     --alert-primary: rgb(100, 149, 237);
     --alert-warning: rgb(255, 99, 71); 
 }
+
+@media screen and (max-width: 768px) {
+    :root {
+        --gap: 10px;
+        --content-gap: 10px;
+        --nav-width: 100%;
+        --main-width: 100%;
+        --post-width: 100%;
+        --header-height: 42px;
+    }
+}

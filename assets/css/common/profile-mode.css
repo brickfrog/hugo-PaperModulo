@@ -42,3 +42,20 @@
 .button:active {
     transform: scale(0.96);
 }
+
+@media screen and (max-width: 768px) {
+    .profile {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .profile .profile_inner {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .buttons {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}

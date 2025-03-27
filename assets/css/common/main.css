@@ -89,14 +89,14 @@ mark {
 }
 
 .social-icons {
-    padding: 3px 0;
+    padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .social-icons a {
     display: inline-block;
-    line-height: 20px;
+    line-height: 25px;
     transition: var(--link-transition);
 }
 
@@ -105,8 +105,8 @@ mark {
 }
 
 .social-icons a svg {
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
 }
 
 .social-icons a:hover {
@@ -338,4 +338,27 @@ hr.backlinks-divider {
 
 .details summary {
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding: var(--gap);
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .entry-content {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .home-info .entry-content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
