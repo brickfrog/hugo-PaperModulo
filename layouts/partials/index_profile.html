@@ -27,7 +27,6 @@
             height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
         {{- end }}
         {{- end }}
-        <h1>{{ .title | default site.Title | markdownify }}</h1>
         <h5>{{ .subtitle | markdownify }}</h6>
         <h6>{{ .subsubtitle | markdownify }}</h6>
         {{- if ( site.Params.homeInfoParams.Omg.Status ) | default false }}
